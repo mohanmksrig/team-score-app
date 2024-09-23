@@ -263,7 +263,7 @@ const App = () => {
         </>
       )}
 
-        <div className="button-container">
+        <div className="button-container-app">
           <button onClick={resetGame} className="reset-btn">Reset Game</button>
           <button onClick={howToPlay} className="how-to-play-btn">How to Play</button>
         </div>
