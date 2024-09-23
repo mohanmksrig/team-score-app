@@ -67,6 +67,10 @@ const App = () => {
     }
   };
 
+  const howToPlay = () => {
+    window.open('/how-to-play', '_blank');
+  };
+
   // Save game state to localStorage when changes occur
   useEffect(() => {
     localStorage.setItem('teams', JSON.stringify(teams));
@@ -116,7 +120,8 @@ const App = () => {
     event.preventDefault();
     const userAnswer = event.target.answer.value;
   
-    if (userAnswer === images[currentImageIndex].answer) {
+    if (userAnswer.toLowerCase() === images[currentImageIndex].answer.toLowerCase()) 
+    {
       const newScores = [...scores];
       newScores[currentTeamIndex] += timeLeft > 30 ? 10 : 7;
       setScores(newScores);
@@ -229,7 +234,7 @@ const App = () => {
             )}
 
             <form onSubmit={handleSubmit}>
-              <input type="text" name="answer" placeholder="Enter your answer" className="answer-box" autoFocus onFocus={(e) => e.target.select()} required /> &nbsp;&nbsp;
+              <input type="text" name="answer" placeholder="Enter your answer" className="answer-box" autoFocus onFocus={(e) => e.target.select()} required autoComplete="off" /> &nbsp;&nbsp;
               <button type="submit" className="submit-btn">Submit</button>
             </form>
 
@@ -250,7 +255,10 @@ const App = () => {
         </>
       )}
 
-      <button onClick={resetGame} className="reset-btn">Reset Game</button>
+        <div className="button-container">
+          <button onClick={resetGame} className="reset-btn">Reset Game</button>
+          <button onClick={howToPlay} className="how-to-play-btn">How to Play</button>
+        </div>
     </div>
   );
 };

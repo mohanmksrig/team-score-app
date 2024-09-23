@@ -27,6 +27,13 @@ function HowToPlay() {
         <li><strong>Winning:</strong> The game continues until all images are answered. The team with the highest score wins.</li>
         <li><strong>Positions:</strong> From the second round onwards, team positions (1st, 2nd, 3rd, 4th) are displayed based on their scores.</li>
       </ol>
+      {/* New Section */}
+      <h2>Answer Rules:-</h2><br />
+      <ol>
+        <li><strong>Case Insensitivity:</strong> You can enter the answer in either lower or upper case. The answers are not case sensitive.</li>
+        <li><strong>No Special Characters:</strong> Answers do not include any special characters or symbols. All answers should be plain text.</li>
+        <li><strong>Answer Word Limit:</strong> Most answers consist of one or two words at maximum, but the majority of answers are single-word answers.</li>
+      </ol>
       <div className="button-container">
         <button onClick={handlePlayGame} className="play-game-btn">Play the Game</button>
       </div>
