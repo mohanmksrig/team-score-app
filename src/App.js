@@ -1,3 +1,11 @@
+/**
+ * Treasure Hunt Game
+ * 
+ * Author: Mohankumar Selvaraj
+ * Description: This is a React-based treasure hunt game where teams compete to guess the correct answers based on displayed images.
+ * Date: 23-Sep-2024
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 

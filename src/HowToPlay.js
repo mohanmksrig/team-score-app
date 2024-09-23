@@ -1,3 +1,11 @@
+/**
+ * Treasure Hunt Game
+ * 
+ * Author: Mohankumar Selvaraj
+ * Description: This is a React-based treasure hunt game where teams compete to guess the correct answers based on displayed images.
+ * Date: 23-Sep-2024
+ */
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './HowToPlay.css';
@@ -33,6 +41,7 @@ function HowToPlay() {
         <li><strong>Case Insensitivity:</strong> You can enter the answer in either lower or upper case. The answers are not case sensitive.</li>
         <li><strong>No Special Characters:</strong> Answers do not include any special characters or symbols. All answers should be plain text.</li>
         <li><strong>Answer Word Limit:</strong> Most answers consist of one or two words at maximum, but the majority of answers are single-word answers.</li>
+        <li><strong>Current Team:</strong> The team responsible for answering is displayed on top of the image, indicating which team is currently answering (e.g., "Current Team: Team A" in red color).</li>
       </ol>
       <div className="button-container">
         <button onClick={handlePlayGame} className="play-game-btn">Play the Game</button>
