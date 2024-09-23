@@ -332,6 +332,7 @@ body {
 
 .current-team-p {
   color: red;
+  padding-top: 25px;
 }
 
 .game-over {
