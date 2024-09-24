@@ -7,7 +7,8 @@
 
 body {
   font-family: Arial, sans-serif;
-  display: flex;
+  /*display: flex;*/
+  display: block;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -21,7 +22,7 @@ body {
   font-weight: bold;
   color: #03a125;
   text-align: center;
-  width: 37%; /* Full width to center title properly */
+  width: 100%; /* Full width to center title properly */
 }
 
 /* Congrats animation */
@@ -389,7 +390,7 @@ body {
   display: flex;
   justify-content: center; /* Center the button horizontally */
   margin: 5px 0; /* Space above and below the button */
-  gap: 10px; /* Adds some space between the buttons */
+  gap: 40px; /* Adds some space between the buttons */
 }
 
 

@@ -1,3 +1,11 @@
+/**
+ * Treasure Hunt Game
+ * 
+ * Author: Mohankumar Selvaraj
+ * Description: This is a React-based treasure hunt game where teams compete to guess the correct answers based on displayed images.
+ * Date: 23-Sep-2024
+ */
+
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 
@@ -9,6 +17,7 @@ const initialTeams = [
 ];
 
 const App = () => {
+  // Load initial state from localStorage or fallback to defaults
   const loadState = (key, fallback) => {
     const savedState = localStorage.getItem(key);
     return savedState ? JSON.parse(savedState) : fallback;
@@ -20,7 +29,7 @@ const App = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(loadState('currentImageIndex', 0));
   const [scores, setScores] = useState(loadState('scores', [0, 0, 0, 0]));
   const [showCongrats, setShowCongrats] = useState(false);
-  const [timeLeft, setTimeLeft] = useState(loadState('timeLeft', 120));
+  const [timeLeft, setTimeLeft] = useState(loadState('timeLeft', 120)); // 2 minutes countdown in seconds
   const [progress, setProgress] = useState(100);
   const [isPlaying, setIsPlaying] = useState(true);
   const timerRef = useRef(null);
@@ -28,19 +37,18 @@ const App = () => {
   const [lastCorrectTeamIndex, setLastCorrectTeamIndex] = useState(null);
   const [currentRound, setCurrentRound] = useState(loadState('currentRound', 1));
   const [gameOver, setGameOver] = useState(loadState('gameOver', false));
-  const [answeredImages, setAnsweredImages] = useState(loadState('answeredImages', []));
-  const [isExtraTurn, setIsExtraTurn] = useState(loadState('isExtraTurn', false));
+  const [answeredImages, setAnsweredImages] = useState(loadState('answeredImages', [])); // Store answered images
 
   const images = [
-    { src: '/th_images/image1.jpg', answer: 'antivirus', clue: 'Its the superhero that keeps your digital world safe from bad guys.' },
-    { src: '/th_images/image2.jpg', answer: 'bluetooth', clue: 'This is Wireless connection Technology to transfer the files.' },
-    { src: '/th_images/image3.jpg', answer: 'robot', clue: 'Its like a game where you can design, customize, and command your very own.' },
-    { src: '/th_images/image222.jpg', answer: 'pc', clue: 'Without this we cant play this game' },
+    { src: '/th_images/image1.jpg', answer: 'Answer1', clue: 'xyz' },
+    { src: '/th_images/image2.jpg', answer: 'Answer2', clue: 'mnop' },
+    { src: '/th_images/image3.jpg', answer: 'Answer3', clue: 'it will affect entire system will destroy!!' },
   ];
 
   const resetGame = () => {
     const confirmReset = window.confirm("Are you sure you want to reset the game?");
     if (confirmReset) {
+      // Reset teams and scores
       setTeams(initialTeams);
       setScores([0, 0, 0, 0]);
       setCurrentTeamIndex(0);
@@ -50,10 +58,20 @@ const App = () => {
       setShowClue(false);
       setLastCorrectTeamIndex(null);
       setCurrentRound(1);
-      setAnsweredImages([]);
-      setGameOver(false);
-      setIsExtraTurn(false);
-      localStorage.clear();
+      setAnsweredImages([]); // Reset answered images
+      setGameOver(false); // Reset game over state
+      
+      // Clear local storage
+      localStorage.removeItem('teams');
+      localStorage.removeItem('scores');
+      localStorage.removeItem('currentTeamIndex');
+      localStorage.removeItem('chancesLeft');
+      localStorage.removeItem('currentImageIndex');
+      localStorage.removeItem('timeLeft');
+      localStorage.removeItem('showClue');
+      localStorage.removeItem('lastCorrectTeamIndex');
+      localStorage.removeItem('currentRound');
+      localStorage.removeItem('answeredImages');
     }
   };
 
@@ -61,6 +79,7 @@ const App = () => {
     window.open('/how-to-play', '_blank');
   };
 
+  // Save game state to localStorage when changes occur
   useEffect(() => {
     localStorage.setItem('teams', JSON.stringify(teams));
     localStorage.setItem('currentTeamIndex', JSON.stringify(currentTeamIndex));
@@ -69,10 +88,10 @@ const App = () => {
     localStorage.setItem('scores', JSON.stringify(scores));
     localStorage.setItem('timeLeft', JSON.stringify(timeLeft));
     localStorage.setItem('currentRound', JSON.stringify(currentRound));
-    localStorage.setItem('answeredImages', JSON.stringify(answeredImages));
-    localStorage.setItem('isExtraTurn', JSON.stringify(isExtraTurn));
-  }, [teams, currentTeamIndex, chancesLeft, currentImageIndex, scores, timeLeft, currentRound, answeredImages, isExtraTurn]);
+    localStorage.setItem('answeredImages', JSON.stringify(answeredImages)); // Save answered images
+  }, [teams, currentTeamIndex, chancesLeft, currentImageIndex, scores, timeLeft, currentRound]);
 
+  // Countdown Timer Logic
   useEffect(() => {
     if (isPlaying) {
       timerRef.current = setInterval(() => {
@@ -84,11 +103,12 @@ const App = () => {
             return prevTime - 1;
           } else {
             moveToNextTeam();
-            return 120;
+            return 120; // Reset timer
           }
         });
       }, 1000);
     }
+
     return () => clearInterval(timerRef.current);
   }, [isPlaying, currentTeamIndex]);
 
@@ -98,15 +118,10 @@ const App = () => {
 
   const moveToNextTeam = () => {
     setChancesLeft(3);
-    setTimeLeft(120);
-    setShowClue(false);
-    
-    // Always move to the next team, regardless of extra turn status
     const nextTeamIndex = (currentTeamIndex + 1) % initialTeams.length;
     setCurrentTeamIndex(nextTeamIndex);
-    
-    // Reset the extra turn flag
-    setIsExtraTurn(false);
+    setTimeLeft(120);
+    setShowClue(false);
   };
 
   const handleSubmit = (event) => {
@@ -119,14 +134,17 @@ const App = () => {
       newScores[currentTeamIndex] += timeLeft > 30 ? 10 : 7;
       setScores(newScores);
   
+      // Mark the current image as answered
       const updatedAnsweredImages = [...answeredImages, currentImageIndex];
       setAnsweredImages(updatedAnsweredImages);
   
+      // Check if the game is over AFTER the answeredImages state has updated
       if (updatedAnsweredImages.length === images.length) {
-        setGameOver(true);
+        setGameOver(true); // Game over when all images have been answered
         return;
       }
   
+      // Get the next image index and move to the next team
       const nextIndex = getNextImageIndex(updatedAnsweredImages);
       setCurrentImageIndex(nextIndex);
       
@@ -134,26 +152,22 @@ const App = () => {
       setShowCongrats(true);
       setTimeout(() => setShowCongrats(false), 3000);
   
-      if (!isExtraTurn) {
-        // If it's not already an extra turn, give an extra turn
-        setIsExtraTurn(true);
-        setTimeLeft(120);
-        setChancesLeft(3);
-        setShowClue(false);
-      } else {
-        // If it was an extra turn, move to the next team
-        moveToNextTeam();
-      }
-    } else if (chancesLeft > 1) {
+      setChancesLeft(3);
+      moveToNextTeam();
+    } 
+    else if (chancesLeft > 1) 
+    {
       setChancesLeft(chancesLeft - 1);
-    } else {
-      // If the team fails, move to the next team
+    } 
+    else 
+    {
       moveToNextTeam();
     }
   
     event.target.reset();
   };
   
+  // Update getNextImageIndex to accept the answeredImages list as a parameter
   const getNextImageIndex = (answeredImages) => {
     let nextIndex = currentImageIndex;
     while (answeredImages.includes(nextIndex)) {
@@ -167,11 +181,16 @@ const App = () => {
 
   const getPositionText = (index) => {
     switch (index) {
-      case 0: return '1st';
-      case 1: return '2nd';
-      case 2: return '3rd';
-      case 3: return '4th';
-      default: return '';
+      case 0:
+        return '1st';
+      case 1:
+        return '2nd';
+      case 2:
+        return '3rd';
+      case 3:
+        return '4th';
+      default:
+        return '';
     }
   };
 
@@ -181,7 +200,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <h1 className="title">Intake Team Treasure Hunt Game</h1>
+      <h1 className="title">Intake Team Treasure Hunt</h1>
   
       {showCongrats && lastCorrectTeamIndex !== null && teams[lastCorrectTeamIndex] && (
         <div className="congrats">
@@ -209,11 +228,12 @@ const App = () => {
         </div>
       ) : (
         <>
+          {/* Current Team */}
           <div className="current-team">
             <p className="current-team-p">Current Team: {initialTeams[currentTeamIndex].name}</p>
-            {isExtraTurn && <p className="extra-turn-indicator">Extra Turn!</p>}
           </div>
 
+          {/* Center Content */}
           <div className="center-content">
             <div className="timer-progress">
               <div className={`timer-bar ${timeLeft <= 30 ? 'warning' : ''}`} style={{ width: `${progress}%` }}>
@@ -226,8 +246,8 @@ const App = () => {
             )}
 
             <form onSubmit={handleSubmit}>
-              <input type="text" name="answer" placeholder="Enter your answer" className="answer-box" autoFocus onFocus={(e) => e.target.select()} required autoComplete="off" />
-              &nbsp;&nbsp;<button type="submit" className="submit-btn">Submit</button>
+              <input type="text" name="answer" placeholder="Enter your answer" className="answer-box" autoFocus onFocus={(e) => e.target.select()} required autoComplete="off" /> &nbsp;&nbsp;
+              <button type="submit" className="submit-btn">Submit</button>
             </form>
 
             {showClue && <p className="clue-text">Clue: {images[currentImageIndex].clue}</p>}
@@ -243,15 +263,14 @@ const App = () => {
                 {isPlaying ? 'Pause' : 'Play'}
               </button>
             </div>
-            <div className="button-container-app">
-              <button onClick={resetGame} className="reset-btn">Reset Game</button>
-              <button onClick={howToPlay} className="how-to-play-btn">How to Play</button>
-            </div>
           </div>
         </>
       )}
 
-      
+        <div className="button-container-app">
+          <button onClick={resetGame} className="reset-btn">Reset Game</button>
+          <button onClick={howToPlay} className="how-to-play-btn">How to Play</button>
+        </div>
     </div>
   );
 };
