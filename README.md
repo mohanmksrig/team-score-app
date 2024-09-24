@@ -1,70 +1,23 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1>How to Play Online Treasure Hunt</h1>
+      <ol>
+        <li><strong>Teams & Turns:</strong> There are 4 teams (Team A, Team B, Team C, and Team D). Each team takes turns to guess the correct answer for the displayed image.</li>
+        <li><strong>Answering:</strong> Type your answer in the provided input box and click the submit button.</li>
+        <li><strong>Chances:</strong> Each team gets 3 chances to guess the answer. The number of remaining chances is displayed below the image.</li>
+        <li><strong>Timer:</strong> Each team has 2 minutes to guess the answer. A progress bar shows how much time is left.</li>
+        <li><strong>Clue:</strong> A clue is revealed automatically when the timer reaches 30 seconds.</li>
+        <li><strong>Scoring:</strong> 
+          <ul>
+            <li>10 points are awarded for each correct answer.</li>
+            <li>If a clue is revealed, only 7 points are awarded for the correct answer.</li>
+          </ul>
+        </li>
+        <li><strong>Winning:</strong> The game continues until all images are answered. The team with the highest score wins.</li>
+        <li><strong>Positions:</strong> From the second round onwards, team positions (1st, 2nd, 3rd, 4th) are displayed based on their scores.</li>
+      </ol>
+      <h2>Answer Rules:-</h2><br />
+      <ol>
+        <li><strong>Case Insensitivity:</strong> You can enter the answer in either lower or upper case. The answers are not case sensitive.</li>
+        <li><strong>No Special Characters:</strong> Answers do not include any special characters or symbols. All answers should be plain text.</li>
+        <li><strong>Answer Word Limit:</strong> Most answers consist of one or two words at maximum, but the majority of answers are single-word answers.</li>
+        <li><strong>Current Team:</strong> The team responsible for answering is displayed on top of the image, indicating which team is currently answering (e.g., "Current Team: Team A" in red color).</li>
+      </ol>
