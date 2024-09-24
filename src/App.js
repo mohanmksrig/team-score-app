@@ -32,10 +32,10 @@ const App = () => {
   const [isExtraTurn, setIsExtraTurn] = useState(loadState('isExtraTurn', false));
 
   const images = [
-    { src: '/th_images/image1.jpg', answer: 'antivirus', clue: 'Its the superhero that keeps your digital world safe from bad guys.' },
-    { src: '/th_images/image2.jpg', answer: 'bluetooth', clue: 'This is Wireless connection Technology to transfer the files.' },
-    { src: '/th_images/image3.jpg', answer: 'robot', clue: 'Its like a game where you can design, customize, and command your very own.' },
-    { src: '/th_images/image222.jpg', answer: 'pc', clue: 'Without this we cant play this game' },
+    { src: '/th_images/image1t.jpg', answer: 'antivirus', clue: 'Its the superhero that keeps your digital world safe from bad guys.' },
+    { src: '/th_images/image2t.jpg', answer: 'bluetooth', clue: 'This is Wireless connection Technology to transfer the files.' },
+    { src: '/th_images/image3t.jpg', answer: 'robot', clue: 'Its like a game where you can design, customize, and command your very own.' },
+    { src: '/th_images/image222t.jpg', answer: 'pc', clue: 'Without this we cant play this game' },
   ];
 
   const resetGame = () => {
