@@ -220,6 +220,7 @@ body {
 .team-box ul {
   list-style-type: none; /* Hides the bullet points */
   padding: 0; /* Removes default padding */
+  padding-top: 10px;
 }
 
 .team-box li {
