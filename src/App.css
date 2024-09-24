@@ -328,7 +328,7 @@ body {
 
 .timer-bar.blink {
   background-color: orange; /* Change to orange when blinking */
-  animation: blink 1s infinite; /* Blink effect */ 
+  animation: blink 1s infinite; /* Blink effect */
 }
 
 .current-team-p {
