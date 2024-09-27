@@ -1,6 +1,6 @@
 EMXvIVIlgTBg7IQtMe8Yg==	    Antivirus	    I've image
 vD88ALWAZAbKLJ+OwHoqrw==	Bluetooh	    I've image
-f5fCaZzAfyK1lAx7LFVrQ==	    Robot	        I've image
+f5fCaZzAfyK1lAx7LFVrQ==	    Robot	        I've image - No
 zWvfVTlvSp9RDmv+taMMSw==	AI	            I've image
 LB4mRK37bsyiblv9WrCLdw==	Processor	    I've image
 eJu7hz5cMUO5VCcrdd68RA==	Internet	    I've image
@@ -13,20 +13,20 @@ MgYD0QkRxySqpVfXRI+w==	    Backlog	        I've image
 tHmdXo7CIphKHF6XyiGg==	    Unstructure	    I've image
 uqIsc6xKnDOXhOmn1mYrlQ==	Compressed File	I've image
 3METJqZsAH8HhCm218MIbA==	CICD	        I've image
-GiJFlLyMQ6wqGT8gnMAqA==	    Hybrid	        I've image
-Eq5hRDIeypSm1hyhc4Ww==	    PC	            I've image
+GiJFlLyMQ6wqGT8gnMAqA==	    Hybrid	        I've image - Suggestion
+Eq5hRDIeypSm1hyhc4Ww==	    PC	            I've image - No
 6evMjRFvjZU5FP76Wn2TXA==	OOO	            No image
-YipMmlhcjCoD9W6FVRQIg==	    Sharepoint	    I've image
-3fPnizQ35Il8dM+swlDRA==	    Jira	        I've image
-1HhJXJZTS7pkjsqK8hkN4A==	Server	        I've image
+YipMmlhcjCoD9W6FVRQIg==	    Sharepoint	    I've image - Suggestion
+3fPnizQ35Il8dM+swlDRA==	    Jira	        I've image - My suggestion
+1HhJXJZTS7pkjsqK8hkN4A==	Server	        I've image - Suggestion
 EbaHRlYCAyLpqtBjPtlfg==	    Database	    I've image
 voweYUU4zVkW7HSN9M8lw==	    Virtualaization	No image
-4aiYJfsSsIZzI6KDZG596A==	SDLC	        I've image
+4aiYJfsSsIZzI6KDZG596A==	SDLC	        I've image - My suggestion
 F8LRUmZxGsdmQKwQjzghtQ==	Testing	        I've image
 pKEfgUvBERALzpKs8VEPYA==	Product Owner	No image
 TURtNr7f1uGadqscjz7xqg==	S3 Bucket	    I've image
 Eh0fvbOhcQQzXvrhXx1Shg==	Structure	    No image
-nC4CTLhnNjYjgxQoREXig==	    Retirement	    No image
+nC4CTLhnNjYjgxQoREXig==	    Retirement	    No image - Innovative image
 13HHabvNRqIjBYw5RtESLA==    Virtual Reality No image
 LR67hmZxGsdmQKwQjzghtQ==    Screen Sharing  I've image
 hhDS65Z2WBEaKNnd0RK4Vw==    Chatbot         I've image
