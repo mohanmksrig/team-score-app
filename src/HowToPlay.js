@@ -22,6 +22,7 @@ function HowToPlay() {
       <h1>How to Play Treasure Hunt</h1>
       <ol>
         <li><strong>Teams & Turns:</strong> There are 4 teams (Team A, Team B, Team C, and Team D). Each team takes turns to guess the correct answer for the displayed image.</li>
+        <li><strong>Rounds:</strong> Each rounds 4 images will displayed, which means each Team will have a each guess, so totally Images will be displayed.</li>
         <li><strong>Answering:</strong> Type your answer in the provided input box and click the submit button.</li>
         <li><strong>Chances:</strong> Each team gets 3 chances to guess the answer. The number of remaining chances is displayed below the image.</li>
         <li><strong>Timer:</strong> Each team has 2 minutes to guess the answer. A progress bar shows how much time is left.</li>
@@ -32,8 +33,8 @@ function HowToPlay() {
             <li>If a clue is revealed, only 7 points are awarded for the correct answer.</li>
           </ul>
         </li>
+        <li><strong>Positions:</strong> Team positions (1st, 2nd, 3rd, 4th) are displayed based on their scores.</li>
         <li><strong>Winning:</strong> The game continues until all images are answered. The team with the highest score wins.</li>
-        <li><strong>Positions:</strong> From the second round onwards, team positions (1st, 2nd, 3rd, 4th) are displayed based on their scores.</li>
       </ol>
       {/* New Section */}
       <h2>Answer Rules:-</h2><br />
@@ -42,6 +43,7 @@ function HowToPlay() {
         <li><strong>No Special Characters:</strong> Answers do not include any special characters or symbols. All answers should be plain text.</li>
         <li><strong>Answer Word Limit:</strong> Most answers consist of one or two words at maximum, but the majority of answers are single-word answers.</li>
         <li><strong>Current Team:</strong> The team responsible for answering is displayed on top of the image, indicating which team is currently answering (e.g., "Current Team: Team A" in red color).</li>
+        <li><strong>Extra Turn:</strong>If any Team didn't answer correctly then that corresponding image guess will automaticlaly will move to next nearest Team. so thwy will gess first who missed previous team guess and will guess one more them guess.</li>
       </ol>
       <div className="button-container">
         <button onClick={handlePlayGame} className="play-game-btn">Play the Game</button>

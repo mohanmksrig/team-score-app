@@ -1,0 +1,398 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  /*display: flex;*/
+  display: block;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f7f7f7;
+}
+
+.title {
+  position: absolute;
+  top: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #03a125;
+  text-align: center;
+  width: 100%; /* Full width to center title properly */
+}
+
+/* Congrats animation */
+.congrats {
+  position: fixed;
+  top: 30%;
+  left: 35%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 0, 0.9);
+  padding: 20px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #4caf50;
+  border-radius: 8px;
+  box-shadow: 0 0 10px #333;
+  animation: blaster 0.5s ease-in-out infinite;
+}
+
+@keyframes blaster {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Current team display */
+.current-team {
+  margin-top: 60px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+}
+
+.current-team-1 {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #b11a1a;
+  text-align: center;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.center-image {
+  width: 500px;
+  height: 300px;
+  margin-bottom: 20px;
+  object-fit: contain;
+}
+
+.answer-box {
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 350px;
+  text-align: center;
+  font-size: 26px;
+}
+
+.submit-btn {
+  padding: 15px 35px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #45a049;
+}
+
+.chances-left {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #a51212;
+}
+
+/* Progress Bar for Chances Left */
+.chances-progress {
+  width: 350px;
+  height: 30px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative; /* Important to position text in the middle */
+  overflow: hidden;
+}
+
+.chances-bar {
+  height: 100%;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center; /* Horizontally centers text */
+  align-items: center; /* Vertically centers text */
+  font-weight: bold;
+  font-size: 16px;
+  position: relative;
+  z-index: 1; /* Ensure text appears over the progress bar */
+}
+
+.chances-bar.green {
+  background-color: #4caf50;
+}
+
+.chances-bar.yellow {
+  background-color: #ffeb3b;
+  color: black; /* Black text for yellow bar */
+}
+
+.chances-bar.red {
+  background-color: #f44336;
+  font-size: 14px; /* Reduces the font size to 8px when the bar is red */
+}
+
+.chances-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  z-index: 2; /* Ensures text stays above the bar */
+  top: 50%; /* Centers vertically */
+  transform: translateY(-50%); /* Adjusts to be perfectly centered vertically */
+  color: white;
+}
+
+/* Team Box Styles */
+.team-box {
+  position: absolute;
+  width: 200px;
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+  /*transition: transform 0.3s ease, box-shadow 0.3s ease; */
+  transition: all 0;
+}
+
+.team-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Unique Colors for Each Team */
+.team-box.top-left {
+  top: 100px;
+  left: 20px;
+  background-color: #ffeb3b54; /* Yellow */
+}
+
+.team-box.top-right {
+  top: 100px;
+  right: 20px;
+  background-color: #5469ef59; /* Orange */
+}
+
+.team-box.bottom-left {
+  bottom: 20px;
+  left: 20px;
+  background-color: #4caf5061; /* Green */
+}
+
+.team-box.bottom-right {
+  bottom: 20px;
+  right: 20px;
+  background-color: #aa21f35c; /* Blue */
+}
+
+/* Score Highlighting */
+.team-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #046826;
+}
+
+.clue-text {
+  font-size: 17px;
+  font-weight: bold;
+  color: #1a0468;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.team-box ul {
+  list-style-type: none; /* Hides the bullet points */
+  padding: 0; /* Removes default padding */
+  padding-top: 10px;
+}
+
+.team-box li {
+  margin-bottom: 5px; /* Adds space between list items */
+}
+
+/* Timer Progress Bar */
+.timer-progress {
+  width: 500px;
+  height: 22px;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.timer-bar {
+  height: 100%;
+  background-color: #3fa1cd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+}
+
+.timer-text {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.play-pause-btn {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.play-pause-btn:hover {
+  background-color: #45a049;
+}
+
+.play-pause-chances-row {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Optional: Space between the button and the progress bar */
+}
+
+.play-pause-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.chances-progress {
+  flex-grow: 1; /* Makes the progress bar take up the remaining space */
+}
+
+.chances-bar {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-pause-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.play-pause-btn.play {
+  background-color: green; /* Green color when text is 'Play' */
+}
+
+.play-pause-btn.pause {
+  background-color: #f3f335; /* Yellow color when text is 'Pause' */
+  color: black; /* Optional: change text color for better contrast */
+}
+
+.timer-bar.warning {
+  background-color: orange; /* Change color to orange when below 30 seconds */
+}
+
+.timer-bar.critical {
+  background-color: red; /* Change color to red when time runs out */
+}
+
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.timer-bar.blink {
+  background-color: orange; /* Change to orange when blinking */
+  animation: blink 1s infinite; /* Blink effect */
+}
+
+.current-team-p {
+  color: red;
+  padding-top: 35px;
+}
+
+.game-over {
+  margin-top: 300px;
+  font-size: 24px;
+  font-weight: bold;
+  color: red;
+  text-align: center;
+}
+
+.reset-btn {
+  display: block;
+  margin: 5px auto; /* Centers the button horizontally */
+  padding: 5px 5px; /* Adds some padding */
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Removes border */
+  border-radius: 5px; /* Rounds corners */
+  cursor: pointer; /* Changes cursor on hover */
+  font-size: 10px; /* Increases font size */
+}
+
+.how-to-play-btn {
+  display: block;
+  margin: 5px auto; /* Centers the button horizontally */
+  padding: 5px 5px; /* Adds some padding */
+  background-color: #d800ff; /* Button color */
+  color: white; /* Text color */
+  border: none; /* Removes border */
+  border-radius: 5px; /* Rounds corners */
+  cursor: pointer; /* Changes cursor on hover */
+  font-size: 10px; /* Increases font size */
+}
+
+.team-box.active {
+  border: 2px solid #ff9800; /* Orange border to highlight */
+  background-color: rgba(255, 152, 0, 0.3); /* Light orange background */
+  animation: pulse 1s infinite; /* Optional: add a pulse animation */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.button-container-app {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin: 5px 0; /* Space above and below the button */
+  gap: 40px; /* Adds some space between the buttons */
+}
+
+
+

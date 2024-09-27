@@ -1,6 +1,5 @@
 EMXvIVIlgTBg7IQtMe8Yg==	    Antivirus	    I've image
 vD88ALWAZAbKLJ+OwHoqrw==	Bluetooh	    I've image
-f5fCaZzAfyK1lAx7LFVrQ==	    Robot	        I've image - No
 zWvfVTlvSp9RDmv+taMMSw==	AI	            I've image
 LB4mRK37bsyiblv9WrCLdw==	Processor	    I've image
 eJu7hz5cMUO5VCcrdd68RA==	Internet	    I've image
@@ -13,8 +12,7 @@ MgYD0QkRxySqpVfXRI+w==	    Backlog	        I've image
 tHmdXo7CIphKHF6XyiGg==	    Unstructure	    I've image
 uqIsc6xKnDOXhOmn1mYrlQ==	Compressed File	I've image
 3METJqZsAH8HhCm218MIbA==	CICD	        I've image
-GiJFlLyMQ6wqGT8gnMAqA==	    Hybrid	        I've image - Suggestion
-Eq5hRDIeypSm1hyhc4Ww==	    PC	            I've image - No
+GiJFlLyMQ6wqGT8gnMAqA==	    Hybrid	        I've image
 6evMjRFvjZU5FP76Wn2TXA==	OOO	            No image
 YipMmlhcjCoD9W6FVRQIg==	    Sharepoint	    I've image - Suggestion
 3fPnizQ35Il8dM+swlDRA==	    Jira	        I've image - My suggestion
@@ -30,10 +28,15 @@ nC4CTLhnNjYjgxQoREXig==	    Retirement	    No image - Innovative image
 13HHabvNRqIjBYw5RtESLA==    Virtual Reality No image
 LR67hmZxGsdmQKwQjzghtQ==    Screen Sharing  I've image
 hhDS65Z2WBEaKNnd0RK4Vw==    Chatbot         I've image
-                            Automation      I've image
+KjQMmlhcjCoD4W6FVRQIg==     Automation      I've image
+sHK4hz5cMUO5VCcrdd68RA==    Firewall        I've image
+                            Outlook
                             Lottery         
                             Cyberattack
-                            Firewall
+
+f5fCaZzAfyK1lAx7LFVrQ==	    Robot	        I've image  No
+Eq5hRDIeypSm1hyhc4Ww==	    PC	            I've image  No
+                            
                             
 
 
